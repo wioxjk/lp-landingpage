@@ -5,13 +5,10 @@ pipeline:
         - sed -i -e s/deb.debian.org/mirror.linux.pizza/g /etc/apt/sources.list
         - apt-get update
         - apt-get upgrade -y
-        - apt-get install apache2 -y
+        - apt-get install apache2 curl -y
   test:
     image: debian:latest
     commands:
-        - apache2 --version
-  notify:
-    image: drillster/drone-email
-    from: drone@selea.tech
-    recipients: [ jonathan@selea.se ]
-    secrets: [ 192.168.25.25, 25 ]
+        - apache2 -v
+        - netstat -ltpn
+        - curl localhost
