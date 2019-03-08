@@ -15,26 +15,8 @@ pipeline:
     commands:
         - sed -i -e s/deb.debian.org/mirror.linux.pizza/g /etc/apt/sources.list
 
-  deploydev:
+  deploy:
     image: cschlosser/drone-ftps
-    when:
-      branch: master
-    hostname: molnet.portsit.se:21
-    secrets: [ ftp_username, ftp_password ]
-    username:
-      from_secret: ftp_username
-    password:
-      from_secret: ftp_password
-    clean_dir: true
-    chmod: false
-    secure: false
-    dest_dir: htdocs/
-    src_dir: htdocs/
-
-  deploymaster:
-    image: cschlosser/drone-ftps
-    when:
-      branch: master
     hostname: molnet.portsit.se:21
     secrets: [ ftp_username, ftp_password ]
     username:
