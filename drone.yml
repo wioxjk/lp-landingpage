@@ -1,7 +1,9 @@
 pipeline:
   build:
     image: debian:latest
-    commands: sed -i -e s/cdn-fastly.deb.debian.org/mirror.linux.pizza/g /etc/apt/sources.list; apt update; apt upgrade -y
+    commands: cat /etc/apt/sources.list
+    commands: sed -i -e s/cdn-fastly.deb.debian.org/mirror.linux.pizza/g /etc/apt/sources.list
+    commands: apt update; apt upgrade -y
   test:
     image: debian:latest
     commands: echo "done"
