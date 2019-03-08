@@ -2,11 +2,11 @@ pipeline:
   build:
     image: debian:latest
     commands: 
-	- sed -i -e s/deb.debian.org/mirror.linux.pizza/g /etc/apt/sources.list
-	- apt update
-	- apt upgrade -y
-	- apt install apache2 -y
+        - sed -i -e s/deb.debian.org/mirror.linux.pizza/g /etc/apt/sources.list
+        - apt update
+        - apt upgrade -y
+        - apt install apache2 -y
   test:
     image: debian:latest
     commands:
-	- apache2 --version
+        - apache2 --version
