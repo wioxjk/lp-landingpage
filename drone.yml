@@ -10,4 +10,3 @@ pipeline:
     image: debian:latest
     commands:
 	- apache2 --version
-	- echo "done"
