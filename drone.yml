@@ -16,5 +16,16 @@ pipeline:
   test:
     image: debian:latest
     commands:
-        - netstat -ltpn
-        - curl localhost
+        - /usr/bin/curl localhost
+        - /bin/netstat -ltpn
+        - /usr/sbin/apache2 -v
+  notify:
+    image: plugins/matrix
+    settings:
+    homeserver: https://matrix.selea.se
+    roomid: YQaSpONowlLzEbWZNt:matrix.selea.se
+    username:
+      from_secret: matrix_username
+    password:
+      from_secret: matrix_password
+
