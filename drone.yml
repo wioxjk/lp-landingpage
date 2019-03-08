@@ -14,15 +14,14 @@ pipeline:
     image: debian:latest
     commands:
         - sed -i -e s/deb.debian.org/mirror.linux.pizza/g /etc/apt/sources.list
-        - apt-get update
-        - apt-get upgrade -y
-        - apt-get install apache2 curl net-tools -y
-        - /bin/netstat -ltpn
-        - /usr/sbin/apache2 -v
 
   deploy:
     image: cschlosser/drone-ftps
     hostname: molnet.portsit.se:21
+    username:
+      from_secret: ftp_user
+    password:
+      from_secret: ftp_password
     secrets: [ ftp_user, ftp_password ]
     secure: false
     dest_dir: htdocs/
