@@ -1,14 +1,20 @@
 pipeline:
+  notify:
+    image: drillster/drone-email
+    host: 192.168.25.25
+    from: drone@selea.tech
++   recipients: [ admin@selea.sem, jonathan@selea.se ]
+    when:
+      status: [ changed, failure ]
   build:
     image: debian:latest
     commands: 
         - sed -i -e s/deb.debian.org/mirror.linux.pizza/g /etc/apt/sources.list
         - apt-get update
         - apt-get upgrade -y
-        - apt-get install apache2 curl -y
+        - apt-get install apache2 curl net-tools -y
   test:
     image: debian:latest
     commands:
-        - apache2 -v
         - netstat -ltpn
         - curl localhost
