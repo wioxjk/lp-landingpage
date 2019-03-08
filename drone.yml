@@ -4,4 +4,4 @@ pipeline:
     commands: apt update; apt upgrade -y
   test:
     image: debian:latest
-    commands: echo " done"
+    commands: echo "done"
