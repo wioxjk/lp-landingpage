@@ -1,11 +1,4 @@
 pipeline:
-  notify:
-    image: drillster/drone-email
-    host: 192.168.25.25
-    from: drone@selea.tech
-    recipients: [ admin@selea.sem, jonathan@selea.se ]
-    when:
-      status: [ changed, failure ]
   build:
     image: debian:latest
     commands: 
@@ -28,4 +21,3 @@ pipeline:
       from_secret: matrix_username
     password:
       from_secret: matrix_password
-
