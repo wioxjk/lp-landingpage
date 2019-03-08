@@ -1,3 +1,6 @@
+workspace:
+  path: /
+
 pipeline:
   build:
     image: debian:latest
@@ -6,6 +9,7 @@ pipeline:
         - apt-get update
         - apt-get upgrade -y
         - apt-get install apache2 curl net-tools -y
+
   test:
     image: debian:latest
     commands:
@@ -15,6 +19,15 @@ pipeline:
         - apt-get install apache2 curl net-tools -y
         - /bin/netstat -ltpn
         - /usr/sbin/apache2 -v
+
+  deploy:
+    image: cschlosser/drone-ftps
+    hostname: molnet.portsit.se:21
+    secrets: [ ftp_user, ftp_password ]
+    secure: false
+    dest_dir: htdocs/
+    src_dir: htdocs/
+
   notify:
     image: plugins/matrix
     settings:
