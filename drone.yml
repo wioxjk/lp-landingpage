@@ -1,0 +1,7 @@
+pipeline:
+  build:
+    image: debian:latest
+    commands: apt update; apt upgrade -y
+  test:
+    image: debian:latest
+    commands: echo " done"
