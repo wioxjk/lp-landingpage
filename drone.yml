@@ -15,7 +15,7 @@ pipeline:
     commands:
         - sed -i -e s/deb.debian.org/mirror.linux.pizza/g /etc/apt/sources.list
 
-  deploy:
+  deploydev:
     image: cschlosser/drone-ftps
     when:
       branch: master
@@ -31,7 +31,7 @@ pipeline:
     dest_dir: htdocs/
     src_dir: htdocs/
 
-  deploy:
+  deploymaster:
     image: cschlosser/drone-ftps
     when:
       branch: master
