@@ -13,7 +13,6 @@ pipeline:
         - apt-get update
         - apt-get upgrade -y
         - apt-get install apache2 curl net-tools -y
-        - /usr/bin/curl localhost
         - /bin/netstat -ltpn
         - /usr/sbin/apache2 -v
   notify:
