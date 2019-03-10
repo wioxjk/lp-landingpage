@@ -18,9 +18,9 @@ pipeline:
   deploy:
     image: cschlosser/drone-ftps
     hostname: web.linux.pizza:21
+    secrets: [ ftp_username, ftp_password ]
     secure: true
     verify: false
-    secrets: [ ftp_username, ftp_password ]
     username:
       from_secret: ftp_username
     password:
@@ -31,6 +31,10 @@ pipeline:
     src_dir: /htdocs/
 
   notify:
+    when:
+      success: false
+      failure: true
+      change: true
     image: plugins/matrix
     settings:
     homeserver: https://matrix.selea.se
