@@ -25,7 +25,8 @@ pipeline:
       from_secret: ftp_password
     clean_dir: true
     chmod: false
-    secure: false
+    secure: true
+    verify: false
     dest_dir: public/
     src_dir: /htdocs/
 
