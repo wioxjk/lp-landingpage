@@ -27,7 +27,7 @@ pipeline:
     chmod: false
     secure: false
     dest_dir: public/
-    src_dir: htdocs/
+    src_dir: /htdocs/
 
   notify:
     image: plugins/matrix
