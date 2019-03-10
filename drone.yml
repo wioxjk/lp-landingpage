@@ -19,7 +19,7 @@ pipeline:
     image: cschlosser/drone-ftps
     hostname: web.linux.pizza:21
     secrets: [ ftp_username, ftp_password ]
-    secure: true
+    secure: false
     verify: false
     username:
       from_secret: ftp_username
