@@ -17,7 +17,7 @@ pipeline:
 
   deploy:
     image: cschlosser/drone-ftps
-    hostname: molnet.portsit.se:21
+    hostname: web.linux.pizza:21
     secrets: [ ftp_username, ftp_password ]
     username:
       from_secret: ftp_username
@@ -26,7 +26,7 @@ pipeline:
     clean_dir: true
     chmod: false
     secure: false
-    dest_dir: htdocs/
+    dest_dir: public/
     src_dir: htdocs/
 
   notify:
