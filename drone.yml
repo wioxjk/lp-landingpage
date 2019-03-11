@@ -9,12 +9,6 @@ pipeline:
         - apt-get update
         - apt-get upgrade -y
         - apt-get install apache2 curl net-tools -y
-
-  test:
-    image: debian:latest
-    commands:
-        - sed -i -e s/deb.debian.org/mirror.linux.pizza/g /etc/apt/sources.list
-
   deploy:
     ssh:
     image: appleboy/drone-ssh
