@@ -16,19 +16,15 @@ pipeline:
         - sed -i -e s/deb.debian.org/mirror.linux.pizza/g /etc/apt/sources.list
 
   deploy:
-    image: cschlosser/drone-ftps
-    hostname: web.linux.pizza:21
-    secrets: [ ftp_username, ftp_password ]
-    secure: false
-    verify: false
-    username:
-      from_secret: ftp_username
-    password:
-      from_secret: ftp_password
-    clean_dir: true
-    chmod: false
-    dest_dir: public/
-    src_dir: /htdocs/
+    ssh:
+    image: appleboy/drone-ssh
+    host: web.linux.pizza
+    username: root
+    port: 22
+    secrets: [ ssh_key ]
+    script:
+   - echo hello
+   - echo world
 
   notify:
     when:
