@@ -20,7 +20,7 @@ pipeline:
 
   notify:
     when:
-      success: false
+      success: true
       failure: true
       change: true
     image: plugins/matrix
