@@ -31,10 +31,10 @@ pipeline:
     secrets: [ ssh_key ]
     script:
        - cd /home/dev
-       - rm master.zip*
+       - rm dev.zip*
        - rm -rf lp-landingpage
-       - wget https://git.selea.se/jonathan/lp-landingpage/archive/master.zip
-       - unzip master.zip
+       - wget https://git.selea.se/jonathan/lp-landingpage/archive/dev.zip
+       - unzip dev.zip
        - chown -R dev:dev /home/dev
        - echo "done"
 
