@@ -3,6 +3,8 @@ workspace:
 
 pipeline:
   deploy:
+    when:
+       - master
     ssh:
     image: appleboy/drone-ssh
     host: web.linux.pizza
