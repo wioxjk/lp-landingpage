@@ -2,7 +2,7 @@ workspace:
   path: /
 
 pipeline:
-  deploy:
+  build:
     when:
        branch: master
     ssh:
@@ -20,7 +20,7 @@ pipeline:
        - chown -R web:web /home/web
        - echo "done"
 
-  deploy:
+  build:
     when:
        branch: dev
     ssh:
