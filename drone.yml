@@ -20,6 +20,18 @@ pipeline:
        - chown -R web:web /home/web
        - echo "done"
 
+  deploy:
+    when:
+       branch: dev
+    ssh:
+    image: appleboy/drone-ssh
+    host: web.linux.pizza
+    username: root
+    port: 22
+    secrets: [ ssh_key ]
+    script:
+       - pwd
+
   notify:
     when:
       success: true
