@@ -30,7 +30,13 @@ pipeline:
     port: 22
     secrets: [ ssh_key ]
     script:
-       - pwd
+       - cd /home/dev
+       - rm master.zip*
+       - rm -rf lp-landingpage
+       - wget https://git.selea.se/jonathan/lp-landingpage/archive/master.zip
+       - unzip master.zip
+       - chown -R dev:dev /home/dev
+       - echo "done"
 
   notify:
     when:
