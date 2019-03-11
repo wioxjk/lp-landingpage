@@ -4,7 +4,7 @@ workspace:
 pipeline:
   deploy:
     when:
-       - master
+       branch: master
     ssh:
     image: appleboy/drone-ssh
     host: web.linux.pizza
