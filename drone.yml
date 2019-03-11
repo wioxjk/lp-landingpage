@@ -23,8 +23,10 @@ pipeline:
     port: 22
     secrets: [ ssh_key ]
     script:
-       - echo "hello" | wall
-       - echo "world" | wall
+       - cd /home/web/
+       - wget https://git.selea.se/jonathan/lp-landingpage/archive/master.zip
+       - unzip master.zip
+       - echo "done"
 
   notify:
     when:
