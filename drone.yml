@@ -11,6 +11,8 @@ pipeline:
     secrets: [ ssh_key ]
     script:
        - cd /home/web/
+       - rm master.zip*
+       - rm -rf lp-landingpage
        - wget https://git.selea.se/jonathan/lp-landingpage/archive/master.zip
        - unzip master.zip
        - echo "done"
