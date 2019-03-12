@@ -2,7 +2,7 @@ workspace:
   path: /
 
 pipeline:
-  deploy:
+  master:
     when:
        branch: master
     ssh:
@@ -18,6 +18,24 @@ pipeline:
        - wget https://git.selea.se/jonathan/lp-landingpage/archive/master.zip
        - unzip master.zip
        - chown -R web:web /home/web
+       - echo "done"
+
+  dev:
+    when:
+       branch: dev
+    ssh:
+    image: appleboy/drone-ssh
+    host: web.linux.pizza
+    username: root
+    port: 22
+    secrets: [ ssh_key ]
+    script:
+       - cd /home/dev
+       - rm dev.zip*
+       - rm -rf lp-landingpage
+       - wget https://git.selea.se/jonathan/lp-landingpage/archive/dev.zip
+       - unzip dev.zip
+       - chown -R dev:dev /home/dev
        - echo "done"
 
   notify:
