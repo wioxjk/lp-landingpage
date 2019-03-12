@@ -45,7 +45,7 @@ pipeline:
       change: true
     image: plugins/matrix
     settings:
-    homeserver: https://matrix.selea.se
+    homeserver: https://matrix.org
     roomid: jNNkLoxzHAkxIUJqKl:matrix.org
     username:
       from_secret: matrix_username
