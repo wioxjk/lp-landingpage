@@ -14,8 +14,8 @@ pipeline:
     script:
        - cd /home/web
        - rm master.zip*
-       - rm -rf lp-landingpage
        - wget https://git.selea.se/jonathan/lp-landingpage/archive/master.zip
+       - rm -rf lp-landingpage
        - unzip master.zip
        - chown -R web:web /home/web
        - echo "done"
@@ -32,8 +32,8 @@ pipeline:
     script:
        - cd /home/dev
        - rm dev.zip*
-       - rm -rf lp-landingpage
        - wget https://git.selea.se/jonathan/lp-landingpage/archive/dev.zip
+       - rm -rf lp-landingpage
        - unzip dev.zip
        - chown -R dev:dev /home/dev
        - echo "done"
