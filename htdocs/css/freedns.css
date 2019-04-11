@@ -65,7 +65,7 @@ body {
     margin: 30px;
 }
 
-.footer-text {
+.footer-text a {
 	font-size: 1em;
 	color: #000;
 	font-family: "Source-Sans-Pro",sans-serif;
