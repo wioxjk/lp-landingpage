@@ -1,0 +1,14 @@
+#footer {
+	width: 30%;
+	text-align: right;
+	position: fixed;
+	bottom: 5%;
+	right: 5%;
+}
+
+.footer-text {
+        font-size: 1em;
+        color: #fff;
+        font-family: "Source-Sans-Pro",sans-serif;
+        text-decoration: none;
+}
