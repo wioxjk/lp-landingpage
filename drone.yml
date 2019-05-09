@@ -40,9 +40,8 @@ pipeline:
 
   notify:
     when:
-      success: true
-      failure: true
-      change: true
+    when:
+      status: [ success, failure, change ]
     image: plugins/matrix
     settings:
     homeserver: https://matrix.org
