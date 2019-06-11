@@ -18,7 +18,7 @@ pipeline:
        - rm -rf lp-landingpage
        - unzip master.zip
        - rm master.zip
-       - rm drone.yml
+       - rm lp-landingpage/drone.yml
        - chown -R web:web /home/web
        - echo "done"
 
@@ -38,7 +38,7 @@ pipeline:
        - rm -rf lp-landingpage
        - unzip dev.zip
        - rm dev.zip
-       - rm drone.yml
+       - rm lp-landingpage/drone.yml
        - chown -R dev:dev /home/dev
        - echo "done"
 
