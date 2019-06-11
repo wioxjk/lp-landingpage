@@ -17,6 +17,8 @@ pipeline:
        - wget https://git.selea.se/jonathan/lp-landingpage/archive/master.zip
        - rm -rf lp-landingpage
        - unzip master.zip
+       - rm master.zip
+       - rm drone.yml
        - chown -R web:web /home/web
        - echo "done"
 
@@ -35,6 +37,8 @@ pipeline:
        - wget https://git.selea.se/jonathan/lp-landingpage/archive/dev.zip
        - rm -rf lp-landingpage
        - unzip dev.zip
+       - rm dev.zip
+       - rm drone.yml
        - chown -R dev:dev /home/dev
        - echo "done"
 
