@@ -44,12 +44,12 @@ pipeline:
        - unzip dev.zip
        - rm dev.zip
        - rm lp-landingpage/drone.yml
-       - sed -i 's/http:\/\/localhost/https:\/\/cdn.dev.linux.pizza/g' /home/dev/lp-landingpage/htdocs/index.html
-       - sed -i 's/http:\/\/localhost/https:\/\/cdn.dev.linux.pizza/g' /home/dev/lp-landingpage/htdocs/404.html
-       - sed -i 's/http:\/\/localhost/https:\/\/cdn.dev.linux.pizza/g' /home/dev/lp-landingpage/htdocs/500.html
-       - sed -i 's/http:\/\/localhost/https:\/\/cdn.dev.linux.pizza/g' /home/dev/lp-landingpage/htdocs/about/index.html
-       - sed -i 's/http:\/\/localhost/https:\/\/cdn.dev.linux.pizza/g' /home/dev/lp-landingpage/htdocs/about/xmpp.html
-       - sed -i 's/http:\/\/localhost/https:\/\/cdn.dev.linux.pizza/g' /home/dev/lp-landingpage/htdocs/about/mailing-lists.html
+       - sed -i "s/http:\/\/localhost/https:\/\/cdn.dev.linux.pizza/g" /home/dev/lp-landingpage/htdocs/index.html
+       - sed -i "s/http:\/\/localhost/https:\/\/cdn.dev.linux.pizza/g" /home/dev/lp-landingpage/htdocs/404.html
+       - sed -i "s/http:\/\/localhost/https:\/\/cdn.dev.linux.pizza/g" /home/dev/lp-landingpage/htdocs/500.html
+       - sed -i "s/http:\/\/localhost/https:\/\/cdn.dev.linux.pizza/g" /home/dev/lp-landingpage/htdocs/about/index.html
+       - sed -i "s/http:\/\/localhost/https:\/\/cdn.dev.linux.pizza/g" /home/dev/lp-landingpage/htdocs/about/xmpp.html
+       - sed -i "s/http:\/\/localhost/https:\/\/cdn.dev.linux.pizza/g" /home/dev/lp-landingpage/htdocs/about/mailing-lists.html
        - chown -R dev:dev /home/dev
        - echo "done"
 
