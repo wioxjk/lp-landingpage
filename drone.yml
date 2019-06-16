@@ -39,7 +39,6 @@ pipeline:
     secrets: [ ssh_key ]
     script:
        - cd /home/dev
-       - rm dev.zip*
        - wget https://git.selea.se/jonathan/lp-landingpage/archive/dev.zip
        - rm -rf lp-landingpage
        - unzip dev.zip
