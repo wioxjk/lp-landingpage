@@ -19,6 +19,12 @@ pipeline:
        - unzip master.zip
        - rm master.zip
        - rm lp-landingpage/drone.yml
+       - sed -i -e s/http:\/\/localhost/https:\/\/cdn.linux.pizza/g /home/web/lp-landingpage/htdocs/index.html
+       - sed -i -e s/http:\/\/localhost/https:\/\/cdn.linux.pizza/g /home/web/lp-landingpage/htdocs/404.html
+       - sed -i -e s/http:\/\/localhost/https:\/\/cdn.linux.pizza/g /home/web/lp-landingpage/htdocs/500.html
+       - sed -i -e s/http:\/\/localhost/https:\/\/cdn.linux.pizza/g /home/web/lp-landingpage/htdocs/about/index.html
+       - sed -i -e s/http:\/\/localhost/https:\/\/cdn.linux.pizza/g /home/web/lp-landingpage/htdocs/about/xmpp.html
+       - sed -i -e s/http:\/\/localhost/https:\/\/cdn.linux.pizza/g /home/web/lp-landingpage/htdocs/about/mailing-lists.html
        - chown -R web:web /home/web
        - echo "done"
 
@@ -39,6 +45,12 @@ pipeline:
        - unzip dev.zip
        - rm dev.zip
        - rm lp-landingpage/drone.yml
+       - sed -i -e s/http:\/\/localhost/https:\/\/cdn.dev.linux.pizza/g /home/dev/lp-landingpage/htdocs/index.html
+       - sed -i -e s/http:\/\/localhost/https:\/\/cdn.dev.linux.pizza/g /home/dev/lp-landingpage/htdocs/404.html
+       - sed -i -e s/http:\/\/localhost/https:\/\/cdn.dev.linux.pizza/g /home/dev/lp-landingpage/htdocs/500.html
+       - sed -i -e s/http:\/\/localhost/https:\/\/cdn.dev.linux.pizza/g /home/dev/lp-landingpage/htdocs/about/index.html
+       - sed -i -e s/http:\/\/localhost/https:\/\/cdn.dev.linux.pizza/g /home/dev/lp-landingpage/htdocs/about/xmpp.html
+       - sed -i -e s/http:\/\/localhost/https:\/\/cdn.dev.linux.pizza/g /home/dev/lp-landingpage/htdocs/about/mailing-lists.html
        - chown -R dev:dev /home/dev
        - echo "done"
 
