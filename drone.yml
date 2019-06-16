@@ -19,6 +19,12 @@ pipeline:
        - unzip master.zip
        - rm master.zip
        - rm lp-landingpage/drone.yml
+       - sed -i "s~http:\/\/localhost~https:\/\/cdn.linux.pizza~g" /home/dev/lp-landingpage/htdocs/index.html
+       - sed -i "s~http:\/\/localhost~https:\/\/cdn.linux.pizza~g" /home/dev/lp-landingpage/htdocs/404.html
+       - sed -i "s~http:\/\/localhost~https:\/\/cdn.linux.pizza~g" /home/dev/lp-landingpage/htdocs/500.html
+       - sed -i "s~http:\/\/localhost~https:\/\/cdn.linux.pizza~g" /home/dev/lp-landingpage/htdocs/about/index.html
+       - sed -i "s~http:\/\/localhost~https:\/\/cdn.linux.pizza~g" /home/dev/lp-landingpage/htdocs/about/xmpp.html
+       - sed -i "s~http:\/\/localhost~https:\/\/cdn.linux.pizza~g" /home/dev/lp-landingpage/htdocs/about/mailing-lists.html
        - chown -R web:web /home/web
        - echo "done"
 
@@ -33,12 +39,17 @@ pipeline:
     secrets: [ ssh_key ]
     script:
        - cd /home/dev
-       - rm dev.zip*
        - wget https://git.selea.se/jonathan/lp-landingpage/archive/dev.zip
        - rm -rf lp-landingpage
        - unzip dev.zip
        - rm dev.zip
        - rm lp-landingpage/drone.yml
+       - sed -i "s~http:\/\/localhost~https:\/\/cdn.dev.linux.pizza~g" /home/dev/lp-landingpage/htdocs/index.html
+       - sed -i "s~http:\/\/localhost~https:\/\/cdn.dev.linux.pizza~g" /home/dev/lp-landingpage/htdocs/404.html
+       - sed -i "s~http:\/\/localhost~https:\/\/cdn.dev.linux.pizza~g" /home/dev/lp-landingpage/htdocs/500.html
+       - sed -i "s~http:\/\/localhost~https:\/\/cdn.dev.linux.pizza~g" /home/dev/lp-landingpage/htdocs/about/index.html
+       - sed -i "s~http:\/\/localhost~https:\/\/cdn.dev.linux.pizza~g" /home/dev/lp-landingpage/htdocs/about/xmpp.html
+       - sed -i "s~http:\/\/localhost~https:\/\/cdn.dev.linux.pizza~g" /home/dev/lp-landingpage/htdocs/about/mailing-lists.html
        - chown -R dev:dev /home/dev
        - echo "done"
 
