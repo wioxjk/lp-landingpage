@@ -9,8 +9,15 @@ feminism.lgbt 		- troll
 vipgirlfriend.xxx 	- spammy users
 sinblr.com 		- alot of NSFW spam
 pl.smuglo.li		- Lolis and shit
+lets.saynoto.lgbt	- horrible instance 
+develop.gab.com 	- promoting voilence
 
-
+Why is a instance blocked by social.linux.pizza?
+	- Untagged NSFW
+	- Illegal content
+	- Lolis
+	- Promotion of violence
+	- Hate against other humans
 
 If you instance is listed here either by misstake or the instance has actually become better - please let me know
 @admin@social.linux.pizza
