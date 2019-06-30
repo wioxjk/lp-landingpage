@@ -1,6 +1,6 @@
-abdl.link 		- spam instance
+Blocked:
+
 mstdn.foxfam.club 	- one of the most spammy users on fedi
-switter.at		- self explanatory
 melalandia.tk 		- troll instance (.tk domain eew)
 baraag.net 		- Lolis and shit
 humblr.social 		- alot of NSFW spam
@@ -8,10 +8,15 @@ myflog.net 		- I have no idea what this is
 feminism.lgbt 		- troll
 vipgirlfriend.xxx 	- spammy users
 sinblr.com 		- alot of NSFW spam
-pl.smuglo.li		- Lolis and shit
 lets.saynoto.lgbt	- horrible instance 
 develop.gab.com 	- promoting violence
 rapefeminists.network	- promoting violence
+
+Silenced:
+
+switter.at		- self explanatory
+abdl.link 		- spam instance
+pl.smuglo.li		- Lolis and shit
 
 
 Why is a instance blocked by social.linux.pizza?
