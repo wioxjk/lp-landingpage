@@ -10,6 +10,8 @@ vipgirlfriend.xxx 	- spammy users
 sinblr.com 		- alot of NSFW spam
 lets.saynoto.lgbt	- horrible instance 
 develop.gab.com 	- promoting violence
+gab.com 		- promoting violence
+gab.ai 		- promoting violence
 rapefeminists.network	- promoting violence
 
 Silenced:
@@ -27,6 +29,7 @@ If the following has appeared in the public timeline that breaks the following:
 	- Promotion of violence
 	- Hate against other humans
 	- Spam
+	- Refusal to deal with reports by admins
 
 If you instance is listed here either by misstake or the instance has actually become better - please let me know
 @admin@social.linux.pizza
