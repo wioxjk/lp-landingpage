@@ -14,7 +14,7 @@ rapefeminists.network	- promoting violence
 
 Silenced:
 
-gab.com			- gab
+gab.com			- gab (silenced atm, just testing out the two last points in the list further down)
 switter.at		- self explanatory
 abdl.link 		- spam instance
 pl.smuglo.li		- Lolis and shit
@@ -28,6 +28,8 @@ If the following has appeared in the public timeline that breaks the following:
 	- Promotion of violence
 	- Hate against other humans
 	- Spam
+	- Refusal by the admins to deal with reports
+	- Refusal by the admins to deal with malicious content
 
 If you instance is listed here either by misstake or the instance has actually become better - please let me know
 @admin@social.linux.pizza
