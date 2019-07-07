@@ -13,6 +13,7 @@ develop.gab.com 	- https://blogs.linux.pizza/gab-and-the-fediverse
 gab.com			- https://blogs.linux.pizza/gab-and-the-fediverse
 gab.ai			- https://blogs.linux.pizza/gab-and-the-fediverse
 rapefeminists.network	- promoting violence
+anime.website		- admin started to spam NSFW lolis shit to linux.pizza admin
 
 Silenced:
 
