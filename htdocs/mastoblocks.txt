@@ -14,10 +14,13 @@ gab.com			- https://blogs.linux.pizza/gab-and-the-fediverse
 gab.ai			- https://blogs.linux.pizza/gab-and-the-fediverse
 rapefeminists.network	- promoting violence
 anime.website		- admin started to spam NSFW lolis shit to linux.pizza admin
+freefedifollowers.ga	- Spam
+pl.765racing.com	- Spam
+twimblr.xyz 		- Spam
+aria.company		- Lolis and shit
 
 Silenced:
 
-gab.com			- gab (silenced atm, just testing out the two last points in the list further down)
 switter.at		- self explanatory
 abdl.link 		- spam instance
 pl.smuglo.li		- Lolis and shit
