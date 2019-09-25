@@ -18,12 +18,16 @@ freefedifollowers.ga	- Spam
 pl.765racing.com	- Spam
 twimblr.xyz 		- Spam
 aria.company		- Lolis and shit
+weedis.life 		- Spam and spam
 
 Silenced:
 
 switter.at		- self explanatory
 abdl.link 		- spam instance
 pl.smuglo.li		- Lolis and shit
+miniwa.moe 		- Lolis, NSFW untagged
+twimblr.xyz 		- Kinda spammy, trolls
+
 
 
 Why is a instance blocked by social.linux.pizza?
