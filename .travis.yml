@@ -1,0 +1,64 @@
+workspace:
+  path: /
+
+pipeline:
+  master:
+    when:
+       branch: master
+    ssh:
+    image: appleboy/drone-ssh
+    host: web.linux.pizza
+    username: root
+    port: 22
+    secrets: [ ssh_key ]
+    script:
+       - cd /home/web
+       - rm master.zip*
+       - wget https://git.selea.se/jonathan/lp-landingpage/archive/master.zip
+       - rm -rf lp-landingpage
+       - unzip master.zip
+       - rm master.zip
+       - rm lp-landingpage/drone.yml
+       - rm -r .git
+       - sed -i "s~http:\/\/localhost~https:\/\/cdn.linux.pizza~g" /home/web/lp-landingpage/htdocs/index.html
+       - sed -i "s~http:\/\/localhost~https:\/\/cdn.linux.pizza~g" /home/web/lp-landingpage/htdocs/404.html
+       - sed -i "s~http:\/\/localhost~https:\/\/cdn.linux.pizza~g" /home/web/lp-landingpage/htdocs/500.html
+       - sed -i "s~http:\/\/localhost~https:\/\/cdn.linux.pizza~g" /home/web/lp-landingpage/htdocs/about/index.html
+       - sed -i "s~http:\/\/localhost~https:\/\/cdn.linux.pizza~g" /home/web/lp-landingpage/htdocs/about/xmpp.html
+       - sed -i "s~http:\/\/localhost~https:\/\/cdn.linux.pizza~g" /home/web/lp-landingpage/htdocs/about/mailing-lists.html
+       - chown -R web:web /home/web
+       - echo "done"
+
+  dev:
+    when:
+       branch: dev
+    ssh:
+    image: appleboy/drone-ssh
+    host: web.linux.pizza
+    username: root
+    port: 22
+    secrets: [ ssh_key ]
+    script:
+       - cd /home/dev
+       - wget https://git.selea.se/jonathan/lp-landingpage/archive/dev.zip
+       - rm -rf lp-landingpage
+       - unzip dev.zip
+       - rm dev.zip
+       - rm lp-landingpage/.travil.yml
+       - rm -r .git
+       - sed -i "s~http:\/\/localhost~https:\/\/cdn.dev.linux.pizza~g" /home/dev/lp-landingpage/htdocs/index.html
+       - sed -i "s~http:\/\/localhost~https:\/\/cdn.dev.linux.pizza~g" /home/dev/lp-landingpage/htdocs/404.html
+       - sed -i "s~http:\/\/localhost~https:\/\/cdn.dev.linux.pizza~g" /home/dev/lp-landingpage/htdocs/500.html
+       - sed -i "s~http:\/\/localhost~https:\/\/cdn.dev.linux.pizza~g" /home/dev/lp-landingpage/htdocs/about/index.html
+       - sed -i "s~http:\/\/localhost~https:\/\/cdn.dev.linux.pizza~g" /home/dev/lp-landingpage/htdocs/about/xmpp.html
+       - sed -i "s~http:\/\/localhost~https:\/\/cdn.dev.linux.pizza~g" /home/dev/lp-landingpage/htdocs/about/mailing-lists.html
+       - chown -R dev:dev /home/dev
+       - echo "done"
+
+notifications:
+  webhooks:
+    urls:
+      - https://dimension.t2bot.io/api/v1/dimension/webhooks/travisci/tZMTZa18R6sP4I3AlUzXPB5XDs3pryq3hxbwwp9bPgdm99upNAszgIo6U1KKuUIal70ctjD317Zya5qYZS7sQdx1NHFgT1Xl74x9r3SBi8qGJycX9QBsJrxchb3VpbuVtWw3ARDmAMiVB1jhOBa7CRbKiQoKUmLm
+    on_success: change  # always | never | change
+    on_failure: always
+    on_start: never
